@@ -52,7 +52,7 @@ class Auth extends BaseController
         //buat salt
         
         //hash password digabung dengan salt
-        $password = md5($data['password']);
+        $password = $data['password'];
         
         //masukan data ke database
         $this->userModel->save([
@@ -79,7 +79,7 @@ class Auth extends BaseController
         if($user){
             //cek password
             //jika salah arahkan lagi ke halaman login
-            if($user['password'] != md5($data['password'])){
+            if($user['password'] != $data['password']){
                 session()->setFlashdata('password', 'Password salah');
                 return redirect()->to('/auth/login');
             }

@@ -133,6 +133,7 @@ class UsersAdmin extends BaseController
             'nama' => 'required',
             'username' => 'required',
             'password' => 'required',
+            'role' => 'required',
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
         // jika data vlid, maka simpan ke database
@@ -140,7 +141,8 @@ class UsersAdmin extends BaseController
             $users->update($id, [
                 "nama" => $this->request->getPost('nama'),
                 "username" => $this->request->getPost('username'),
-                "password" => $this->request->getPost('password')
+                "password" => $this->request->getPost('password'),
+                "role" => $this->request->getPost('role')
             ]);
             session()->setFlashdata('edit', 'Update Data User Berhasil');
             return redirect('admin/users');

@@ -15,16 +15,23 @@
                       <label>Nama:</label>
                       <input type="text" class="form-control" name="nama" value="<?= $users['nama'] ?>"/>
                     </div>
-                    <!-- Date -->
                     <div class="form-group">
-                      <label>Pergi:</label>
-                      <input type="date" class="form-control" name="tgl_lahir" value="<?= $users['tgl_lahir'] ?>"/>
+                      <label>Username:</label>
+                      <input type="text" class="form-control" name="username" value="<?= $users['username'] ?>"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Password:</label>
+                      <input type="password" class="form-control" name="password" value="<?= $users['password'] ?>"/>
                     </div>
                     <!-- /.form group -->
                     <!-- jumlah -->
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Umur:</label>
-                      <input type="text"class="form-control"placeholder="1" name="umur" value="<?= $users['umur'] ?>"/>
+                      <label for="exampleInputEmail1">Role:</label>
+                      <select class="form-control" style="width: 100%" name="role">
+                        <option value="<?= $users['role'] ?>"><?= $users['role'] ?></option>
+                        <option value="1">Admin</option>
+                        <option value="2">User</option>
+                      </select>
                     </div>
                   </div>
                   <!-- <div class="card-footer">
