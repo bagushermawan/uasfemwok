@@ -30,6 +30,10 @@ class Users extends Migration
 				'type'	=> 'varchar',
 				'constraint' => 100,
 			],
+			'role' => [
+				'type'	=> 'varchar',
+				'constraint' => 100,
+			],
 			'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
 			
 			'updated_at' => [
