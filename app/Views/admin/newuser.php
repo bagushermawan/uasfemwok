@@ -23,16 +23,22 @@
                       <label>Nama:</label>
                       <input type="text" class="form-control" name="nama" placeholder="Markus Jon"/>
                     </div>
-                    <!-- Date -->
                     <div class="form-group">
-                      <label>Pergi:</label>
-                      <input type="date" class="form-control" name="tgl_lahir"/>
+                      <label>Username:</label>
+                      <input type="text" class="form-control" name="username"/>
+                    </div>
+                    <div class="form-group">
+                      <label>Password:</label>
+                      <input type="password" class="form-control" name="password"/>
                     </div>
                     <!-- /.form group -->
                     <!-- jumlah -->
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Umur:</label>
-                      <input type="text"class="form-control"placeholder="1" name="umur"/>
+                      <label for="exampleInputEmail1">Role:</label>
+                      <select class="form-control" style="width: 100%" name="role">
+                        <option value="1" name="role">Admin</option>
+                        <option value="2" name="role">User</option>
+                      </select>
                     </div>
                   </div>
                   <!-- <div class="card-footer">

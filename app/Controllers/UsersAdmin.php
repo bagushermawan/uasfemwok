@@ -114,6 +114,7 @@ class UsersAdmin extends BaseController
             'nama' => $this->request->getVar('nama'),
             'username' => $this->request->getVar('username'),
             'password' => $this->request->getVar('password'),
+            'role' => $this->request->getVar('role'),
             'slug' => url_title($this->request->getPost('nama'), '-', TRUE)
         ]);
         session()->setFlashdata('message', 'Tambah Data User Berhasil');
