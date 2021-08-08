@@ -40,4 +40,25 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+
+	public $register = [
+        'username' => 'alpha_numeric|is_unique[users.username]',
+        'password' => 'min_length[3]|alpha_numeric_punct',
+        'confirm' => 'matches[password]'
+        ];
+        
+   public $register_errors = [
+       'username' => [
+           'alpha_numeric' => 'Username hanya boleh mengandung huruf dan angka',
+           'is_unique' => 'Username sudah dipakai'
+           ],
+        'password' => [
+            'min_length' => 'Password harus terdiri dari 3 kata',
+            'alpha_numeric_punct' => 'Password hanya boleh mengandung angka, huruf, dan karakter yang valid'
+            ],
+       'confirm' => [
+           'matches' => 'Konfirmasi password tidak cocok'
+           ]
+       ];
+
 }

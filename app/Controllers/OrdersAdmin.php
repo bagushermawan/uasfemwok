@@ -7,8 +7,20 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class OrdersAdmin extends BaseController
 {
+    public function __construct()
+    {
+        $this->session = session();
+    }
 	public function index()
 	{
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/auth/login');
+        }
+        
+        //cek role dari session
+        if($this->session->get('role') != 1){
+            return redirect()->to('/home');
+        }
 		// return view('admin/user');
 		 // buat object model $orders
 		$orders = new OrderModel();

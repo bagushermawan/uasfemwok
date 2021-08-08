@@ -7,9 +7,20 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 
 class UsersAdmin extends BaseController
 {
+    public function __construct()
+    {
+        $this->session = session();
+    }
 	public function index()
 	{
-		// return view('admin/user');
+        if(!$this->session->has('isLogin')){
+            return redirect()->to('/auth/login');
+        }
+        
+        //cek role dari session
+        if($this->session->get('role') != 1){
+            return redirect()->to('/home');
+        }
 		 // buat object model $users
 		$users = new UserModel();
         
@@ -75,16 +86,22 @@ class UsersAdmin extends BaseController
                     'required' => 'Nama Harus diisi'
                 ]
             ],
-            'tgl_lahir' => [
+            'username' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Tanggal Lahir Harus diisi'
+                    'required' => 'Username Harus diisi'
                 ]
             ],
-            'umur' => [
+            'password' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Umur Harus diisi'
+                    'required' => 'Password Harus diisi'
+                ]
+            ],
+            'role' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Role Harus diisi 1(admin) 2(biasa)'
                 ]
             ],
  
@@ -95,8 +112,8 @@ class UsersAdmin extends BaseController
         $users = new UserModel();
         $users->insert([
             'nama' => $this->request->getVar('nama'),
-            'tgl_lahir' => $this->request->getVar('tgl_lahir'),
-            'umur' => $this->request->getVar('umur'),
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
             'slug' => url_title($this->request->getPost('nama'), '-', TRUE)
         ]);
         session()->setFlashdata('message', 'Tambah Data User Berhasil');
@@ -114,16 +131,16 @@ class UsersAdmin extends BaseController
         $validation->setRules([
             'id' => 'required',
             'nama' => 'required',
-            'tgl_lahir' => 'required',
-            'umur' => 'required',
+            'username' => 'required',
+            'password' => 'required',
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
         // jika data vlid, maka simpan ke database
         if($isDataValid){
             $users->update($id, [
                 "nama" => $this->request->getPost('nama'),
-                "tgl_lahir" => $this->request->getPost('tgl_lahir'),
-                "umur" => $this->request->getPost('umur')
+                "username" => $this->request->getPost('username'),
+                "password" => $this->request->getPost('password')
             ]);
             session()->setFlashdata('edit', 'Update Data User Berhasil');
             return redirect('admin/users');

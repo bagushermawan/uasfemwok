@@ -11,5 +11,5 @@ class UserModel extends Model
 
     protected $useAutoIncrement = true;
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama', 'tgl_lahir', 'umur', 'slug', 'role'];
+    protected $allowedFields = ['nama', 'username', 'password', 'slug', 'role'];
 }

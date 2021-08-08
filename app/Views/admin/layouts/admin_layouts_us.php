@@ -15,10 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
     />
     <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="<?php echo base_url(); ?>/assets/plugins/fontawesome-free/css/all.min.css"
-    />
+    <link rel="stylesheet"href="<?php echo base_url(); ?>/assets/plugins/fontawesome-free/css/all.min.css"/>
     <!-- daterange picker -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/plugins/daterangepicker/daterangepicker.css">
     <!-- Theme style -->
@@ -175,6 +172,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </button>
                 </div>
         <?php endif; ?>
+        <?php $session = session()?>
+        <h4>Selamat datang admin!</h4>
+        <?php echo $session->get('username')?>
+        <a href="<?php echo site_url('auth/logout'); ?>">Logout</a>
         <!-- alert end -->
         <!-- Content Header (Page header) -->
         <div class="content-header">

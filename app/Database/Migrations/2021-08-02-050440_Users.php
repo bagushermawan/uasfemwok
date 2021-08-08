@@ -19,12 +19,13 @@ class Users extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
-			'tgl_lahir'      => [
-				'type'           => 'date',
+			'username'      => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255'
 			],
-			'umur' => [
-				'type'           => 'INT',
-				'constraint'     => 3,
+			'password' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255',
 			],
 			'slug' => [
 				'type'	=> 'varchar',

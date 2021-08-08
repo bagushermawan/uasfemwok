@@ -7,9 +7,8 @@
                     <tr>
                       <th style="width: 5%"><center>No</center></th>
                       <th style="width: 30%">Nama</th>
-                      <th><center>Tanggal Lahir</center></th>
-                      <th><center>Umur</center></th>
-                      <th style="width: 20%">Role</th>
+                      <th><center>Username</center></th>
+                      <th style="width: 15%"><center>Role</center></th>
                       <th style="width: 25%"><center>Actions</center></th>
                     </tr>
                   </thead>
@@ -18,9 +17,9 @@
                     <tr>
                       <td><center><?= $no++ ?></center></td>
                       <td><?= $a['nama'] ?></td>
-                      <td><center><?= $a['tgl_lahir'] ?></center></td>
-                      <td><center><?= $a['umur'] ?></center></td>
-                      <td><?= $a['umur'] ?></td>
+                      <td><?= $a['username'] ?></td>
+                      <? ?>
+                      <td><center><?= $b=$a['role']; ?></center></td>
                       <td>
                         <center>
                           <a href="<?= site_url('admin/users/'.$a['id'].'/edit') ?>"class="btn btn-sm bg-info">
@@ -37,10 +36,9 @@
                   <tfoot>
                     <tr>
                       <th style="width: 5%"><center>No</center></th>
-                      <th>Nama</th>
-                      <th><center>Tanggal Lahir</center></th>
-                      <th><center>Umur</center></th>
-                      <th style="width: 20%">Role</th>
+                      <th style="width: 30%">Nama</th>
+                      <th><center>Username</center></th>
+                      <th style="width: 15%"><center>Role</center></th>
                       <th style="width: 25%"><center>Actions</center></th>
                     </tr>
                   </tfoot>
