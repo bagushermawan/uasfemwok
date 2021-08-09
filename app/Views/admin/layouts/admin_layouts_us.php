@@ -173,8 +173,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
         <?php endif; ?>
         <?php $session = session()?>
-        <h4>Selamat datang admin!</h4>
-        <?php echo $session->get('username')?>
+        <h4>Selamat datang <b><?php echo $session->get('nama')?></b>!</h4>
+        
         <a href="<?php echo site_url('auth/logout'); ?>">Logout</a>
         <!-- alert end -->
         <!-- Content Header (Page header) -->

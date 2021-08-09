@@ -220,7 +220,7 @@
 	<div class="heroe">
 		<?php $session = session()?>
         <h4>Selamat datang!</h4>
-        <?php echo $session->get('username')?>
+        <?php echo $session->get('nama')?>
         <a href="<?php echo site_url('auth/logout'); ?>">Logout</a>
 
 		<h1>Welcome to awdadwdwawdaf awf awf v.<?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
