@@ -16,7 +16,7 @@ class Users extends BaseController
             return redirect()->to('/auth/login');
         }
 
-        return view('home/index');
+        return view('welkam');
     }
     
 }
