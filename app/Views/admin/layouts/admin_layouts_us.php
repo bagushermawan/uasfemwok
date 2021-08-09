@@ -84,10 +84,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               />
             </div>
             <div class="info">
-              <a href="#" class="d-block">Ikiadmin</a>
+              <p class="d-block" style="color:white;"><?php $session = session();echo $session->get('nama')?></p>
+              <a href="<?php echo site_url('auth/logout'); ?>" style="color:grey;"><button class="btn btn-outline-danger btn-block btn-sm"><i class="fas fa-sign-out-alt"></i> Logout</button></a>
+             
             </div>
           </div>
-
+          
           <!-- SidebarSearch Form -->
           <!-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
@@ -107,21 +109,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Sidebar Menu -->
           <nav class="mt-2">
-            <ul
-              class="nav nav-pills nav-sidebar flex-column"
-              data-widget="treeview"
-              role="menu"
-              data-accordion="false"
-            >
+            <ul class="nav nav-pills nav-sidebar flex-column"data-widget="treeview"role="menu"data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item menu-open">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
-                  <p>
-                    Admin Page
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
+                  <p>Admin Page<i class="right fas fa-angle-left"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
@@ -172,10 +166,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </button>
                 </div>
         <?php endif; ?>
-        <?php $session = session()?>
-        <h4>Selamat datang <b><?php echo $session->get('nama')?></b>!</h4>
-        
-        <a href="<?php echo site_url('auth/logout'); ?>">Logout</a>
         <!-- alert end -->
         <!-- Content Header (Page header) -->
         <div class="content-header">

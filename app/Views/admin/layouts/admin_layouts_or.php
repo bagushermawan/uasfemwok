@@ -97,7 +97,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               />
             </div>
             <div class="info">
-              <a href="#" class="d-block">Ikiadmin</a>
+              <p class="d-block" style="color:white;"><?php $session = session();echo $session->get('nama')?></p>
+              <a href="<?php echo site_url('auth/logout'); ?>" style="color:grey;"><button class="btn btn-outline-danger btn-block btn-sm"><i class="fas fa-sign-out-alt"></i> Logout</button></a>
+             
             </div>
           </div>
 
@@ -185,10 +187,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </button>
                 </div>
         <?php endif; ?>
-        <?php $session = session()?>
-        <h4>Selamat datang admin!</h4>
-        <?php echo $session->get('nama')?>
-        <a href="<?php echo site_url('auth/logout'); ?>">Logout</a>
         <!-- alert end -->
         <!-- Content Header (Page header) -->
         <div class="content-header">
