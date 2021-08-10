@@ -17,6 +17,14 @@ class Home extends BaseController
 		return view('sukses', $data);
 	}
 
+	public function bayar()
+	{
+		$orders = new OrderModel();
+        
+		$data['orders'] = $orders->findAll();
+		return view('bayar', $data);
+	}
+
 
 	public function login()
 	{

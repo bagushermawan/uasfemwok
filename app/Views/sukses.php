@@ -237,16 +237,17 @@ h1
 <section class="container">
 <h1>E-Ticket</h1>
   <div class="row">
+    <?php foreach ($orders as $a) : ?>
     <article class="card fl-left">
       <section class="date">
         <time datetime="23th feb">
           <?php
-echo "<span>" . date('d') . "</span>";
-?> <span>Aug</span>
+          echo "<span>" . date('d') . "</span>";
+          ?> <span>Aug</span>
         </time>
       </section>
       <section class="card-cont">
-          <?php foreach ($orders as $a) : ?>
+          
         <small>atas nama:</small> <b><?php $session = session()?><?php echo $session->get('nama')?></b>
         <h3><small>dari: </small><b><?= $a['dari'] ?></b><small> ke: </small><b><?= $a['ke'] ?></b></h3>
         <h3><small>pergi: </small><b><?= $a['pergi'] ?></b><small> pulang: </small><b><?= $a['pulang'] ?></b></h3>

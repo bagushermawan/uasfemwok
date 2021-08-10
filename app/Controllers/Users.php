@@ -98,7 +98,7 @@ class Users extends BaseController
             'slug' => url_title($this->request->getPost('ke'), '-', TRUE)
         ]);
         session()->setFlashdata('message', 'Tambah Data Order Berhasil');
-        return redirect()->to('sukses');
+        return redirect()->to('bayar');
     }
     
 }
