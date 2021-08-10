@@ -81,13 +81,13 @@ class OrdersAdmin extends BaseController
     public function store()
     {
         if (!$this->validate([
-            'nama' => [
+            'dari' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Nama Harus diisi'
+                    'required' => 'Asal Harus diisi'
                 ]
             ],
-			'tujuan' => [
+			'ke' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Tujuan Harus diisi'
@@ -105,10 +105,28 @@ class OrdersAdmin extends BaseController
                     'required' => 'Tanggal Pergi Harus diisi'
                 ]
             ],
+            'maskapai' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Maskapai Harus diisi'
+                ]
+            ],
+            'room' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Room Harus diisi'
+                ]
+            ],
             'jumlah' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Jumlah Harus diisi'
+                ]
+            ],
+            'kelas' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Kelas Harus diisi'
                 ]
             ],
  
@@ -118,12 +136,15 @@ class OrdersAdmin extends BaseController
         }
         $orders = new OrderModel();
         $orders->insert([
-            'nama' => $this->request->getVar('nama'),
-            'tujuan' => $this->request->getVar('tujuan'),
+            'dari' => $this->request->getVar('dari'),
+            'ke' => $this->request->getVar('ke'),
             'pulang' => $this->request->getVar('pulang'),
             'pergi' => $this->request->getVar('pergi'),
+            'maskapai' => $this->request->getVar('maskapai'),
+            'room' => $this->request->getVar('room'),
             'jumlah' => $this->request->getVar('jumlah'),
-            'slug' => url_title($this->request->getPost('tujuan'), '-', TRUE)
+            'kelas' => $this->request->getVar('kelas'),
+            'slug' => url_title($this->request->getPost('ke'), '-', TRUE)
         ]);
         session()->setFlashdata('message', 'Tambah Data Order Berhasil');
         return redirect()->to('admin/orders');
@@ -139,21 +160,27 @@ class OrdersAdmin extends BaseController
         $validation =  \Config\Services::validation();
         $validation->setRules([
             'id' => 'required',
-            'nama' => 'required',
-            'tujuan' => 'required',
+            'dari' => 'required',
+            'ke' => 'required',
             'pulang' => 'required',
             'pergi' => 'required',
+            'maskapai' => 'required',
+            'room' => 'required',
             'jumlah' => 'required',
+            'kelas' => 'required',
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
         // jika data vlid, maka simpan ke database
         if($isDataValid){
             $orders->update($id, [
-                "nama" => $this->request->getPost('nama'),
-                "tujuan" => $this->request->getPost('tujuan'),
+                "dari" => $this->request->getPost('dari'),
+                "ke" => $this->request->getPost('ke'),
                 "pulang" => $this->request->getPost('pulang'),
                 "pergi" => $this->request->getPost('pergi'),
-                "jumlah" => $this->request->getPost('jumlah')
+                "maskapai" => $this->request->getPost('maskapai'),
+                "room" => $this->request->getPost('room'),
+                "jumlah" => $this->request->getPost('jumlah'),
+                "kelas" => $this->request->getPost('kelas')
             ]);
             session()->setFlashdata('edit', 'Update Data Order Berhasil');
             return redirect('admin/orders');

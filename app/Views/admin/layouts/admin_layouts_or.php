@@ -37,10 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     />
     <!-- Select2 -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/plugins/select2/css/select2.min.css" />
-    <link
-      rel="stylesheet"
-      href="<?php echo base_url(); ?>/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
-    />
+    <link rel="stylesheet"href="<?php echo base_url(); ?>/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"/>
   </head>
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">

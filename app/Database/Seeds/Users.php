@@ -11,29 +11,20 @@ class Users extends Seeder
 		// membuat data
 		$news_data = [
 			[
-				'nama' => 'Ali',
-				'tgl_lahir'  => '2021-01-01',
-				'umur' => '20',
-				'slug' => 'ali',
+				'nama' => 'bagushermawan admin',
+				'username'  => 'baher',
+				'password' => 'qwe',
+				'slug' => 'babababaa',
+				'role' => '1',
 			],
 			[
-				'nama' => 'Adit',
-				'tgl_lahir' => '2022-02-02',
-				'umur' => '21',
-				'slug' => 'adit',
+				'nama' => 'ini userrr',
+				'username'  => 'user',
+				'password' => 'qwe',
+				'slug' => 'ususususu',
+				'role' => '2',
 			],
-			[
-				'nama' => 'Baher',
-				'tgl_lahir'	=> '2023-03-03',
-				'umur' => '22',
-				'slug' => 'baher',
-			],
-			[
-				'nama' => 'Rezi',
-				'tgl_lahir'	=> '2024-04-04',
-				'umur' => '23',
-				'slug' => 'rezi',
-			]
+			
 		];
 
 		foreach($news_data as $data){

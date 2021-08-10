@@ -15,11 +15,11 @@ class Orders extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true
 			],
-			'nama'       => [
+			'dari'       => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
-			'tujuan'      => [
+			'ke'      => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
@@ -29,13 +29,25 @@ class Orders extends Migration
 			'pergi' => [
 				'type'			=> 'date',
 			],
-			'jumlah' => [
-				'type'			=> 'INT',
-				'constraint' 	=> 2,
+			'maskapai'      => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255'
 			],
-			'slug' => [
+			'room' => [
+				'type'			=> 'VARCHAR',
+				'constraint' 	=> '255',
+			],
+			'jumlah' => [
 				'type'	=> 'varchar',
-				'constraint' => 100,
+				'constraint' => '255',
+			],
+			'kelas'      => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255'
+			],
+			'slug'      => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255'
 			],
 			'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
 			

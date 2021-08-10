@@ -49,79 +49,94 @@
 							</p>
 						</div>
 					</div>
-					<div class="col-md-4 col-md-pull-7">
+					<div class="col-md-5 col-md-pull-7">
 						<div class="booking-form">
-							<form>
+							<form action="<?= site_url('/users/store') ?>" method="post" id="text-editor">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Dari:</span>
+											<input class="form-control" type="text" name="dari"required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Ke:</span>
+											<select class="form-control" name="ke">
+												<option value="Surabaya">Surabaya</option>
+												<option value="Jakarta">Jakarta</option>
+												<option value="Bali">Bali</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Tanggal Pulang:</span>
+											<input class="form-control" type="date" name="pulang">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Tanggal Pergi:</span>
+											<input class="form-control" type="date" name="pergi">
+										</div>
+									</div>
+								</div>
 								<div class="form-group">
-									<span class="form-label">Nama Hotel</span>
-									<select class="form-control">
-												<option>Best Western Papilio Hotel</option>
-												<option>LUMINOR Hotel</option>
-												<option>Shangri-La Surabaya</option>
-											</select>
-                                            <span class="select-arrow"></span>
+									<span class="form-label">Maskapai:</span>
+									<select class="form-control" name="maskapai">
+										<option value="Banteng Airlines">Banteng Airlines</option>
+										<option value="Beringin Airlines">Beringin Airlines</option>
+									</select>
+									<span class="select-arrow"></span>
 								</div>
-								<div class="row">
+								<div class="form-group">
+									<span class="form-label">Room:</span>
+									<select class="form-control" style="height: 100%" name="room">
+										<option value="Depan">Depan</option>
+										<option value="Tengah">Tengah</option>
+										<option value="Belakang">Belakang</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+									<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
-											<span class="form-label">Check In</span>
-											<input class="form-control" type="date" required>
+											<span class="form-label">Jumlah Penumpang:</span>
+											<input class="form-control" type="text" name="jumlah">
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-											<span class="form-label">Check out</span>
-											<input class="form-control" type="date" required>
+											<span class="form-label">Kelas Penerbangan:</span>
+											<select class="form-control" style="height: 100%" name="kelas">
+												<option value="Ekonomi">Ekonomi</option>
+												<option value="Bisnis">Bisnis</option>
+											</select>
+											<span class="select-arrow"></span>
 										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-sm-4">
-										<div class="form-group">
-											<span class="form-label">Rooms</span>
-											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-											</select>
-											<span class="select-arrow"></span>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="form-group">
-											<span class="form-label">Adults</span>
-											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-											</select>
-											<span class="select-arrow"></span>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="form-group">
-											<span class="form-label">Children</span>
-											<select class="form-control">
-												<option>0</option>
-												<option>1</option>
-												<option>2</option>
-											</select>
-											<span class="select-arrow"></span>
-										</div>
-									</div>
-								</div></form>
                                 <?php if($session->has('isLogin')){
-                // do something when exist
-                echo '<div class="form-btn">
-									<a href=sukses><button class="submit-btn">Pesan</button></a>
-								</div>';}
-            else{
-                // do something when doesn't exist
-                echo "<a href='auth/login'><button class='submit-btn'>Login terlebih dahulu</button></a>";}?>
+									// do something when exist
+									echo '<div class="form-btn"><a href=sukses><button class="submit-btn">Pesan</button></a></div>';}
+									else{
+										// do something when doesn't exist
+										echo "";}?>
 								<!-- <div class="form-btn">
 									<button class="submit-btn">Pesan</button>
 								</div> -->
-							
+								<!-- <a href='auth/login'><button class='submit-btn'>Login terlebih dahulu</button></a> -->
+							</form>
+							<?php if($session->has('isLogin')){
+									// do something when exist
+									echo '';}
+									else{
+										// do something when doesn't exist
+										echo "<a href='auth/login'><button class='submit-btn'>Login terlebih dahulu</button></a>";}?>
 						</div>
 					</div>
 				</div>

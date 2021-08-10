@@ -11,5 +11,6 @@ class OrderModel extends Model
 
     protected $useAutoIncrement = true;
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama', 'tujuan', 'pulang', 'pergi', 'jumlah', 'slug'];
+    // protected $allowedFields = ['nama', 'tujuan', 'pulang', 'pergi', 'jumlah', 'slug'];
+    protected $allowedFields = ['dari', 'ke', '', 'pulang', 'pergi','maskapai', 'room', 'jumlah', 'kelas', 'slug'];
 }

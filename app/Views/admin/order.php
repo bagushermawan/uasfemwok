@@ -6,11 +6,14 @@
                   <thead>
                     <tr>
                       <th style="width: 5%"><center>No</center></th>
-                      <th style="width: 30%">Nama</th>
-                      <th style="width: 15%"><center>Tujuan</center></th>
-                      <th><center>Pulang</center></th>
-                      <th><center>Pergi</center></th>
+                      <th style="width: 15%">Dari</th>
+                      <th style="width: 15%"><center>Ke</center></th>
+                      <th style="width: 10%"><center>Pulang</center></th>
+                      <th style="width: 10%"><center>Pergi</center></th>
+                      <th style="width: 10%"><center>Maskapai</center></th>
+                      <th style="width: 10%"><center>Room</center></th>
                       <th><center>Jumlah</center></th>
+                      <th style="width: 10%"><center>Kelas</center></th>
                       <th style="width: 25%"><center>Actions</center></th>
                     </tr>
                   </thead>
@@ -18,11 +21,14 @@
                     <?php $no=1;foreach ($orders as $a) : ?>
                     <tr>
                       <td><center><?= $no++ ?></center></td>
-                      <td><?= $a['nama'] ?></td>
-                      <td><?= $a['tujuan'] ?></td>
+                      <td><?= $a['dari'] ?></td>
+                      <td><?= $a['ke'] ?></td>
                       <td><center><?= $a['pulang'] ?></center></td>
                       <td><center><?= $a['pergi'] ?></center></td>
+                      <td><center><?= $a['maskapai'] ?></center></td>
+                      <td><center><?= $a['room'] ?></center></td>
                       <td><center><?= $a['jumlah'] ?></center></td>
+                      <td><center><?= $a['kelas'] ?></center></td>
                       <td>
                         <center>
                           <a href="<?= site_url('admin/orders/'.$a['id'].'/edit') ?>"class="btn btn-sm bg-info">
@@ -37,13 +43,16 @@
                     <?php endforeach ?>
                   </tbody>
                   <tfoot>
-                    <tr>
+                   <tr>
                       <th style="width: 5%"><center>No</center></th>
-                      <th style="width: 30%">Nama</th>
-                      <th><center>Tujuan</center></th>
-                      <th><center>Pulang</center></th>
-                      <th><center>Pergi</center></th>
+                      <th style="width: 15%">Dari</th>
+                      <th style="width: 15%"><center>Ke</center></th>
+                      <th style="width: 10%"><center>Pulang</center></th>
+                      <th style="width: 10%"><center>Pergi</center></th>
+                      <th style="width: 10%"><center>Maskapai</center></th>
+                      <th style="width: 10%"><center>Room</center></th>
                       <th><center>Jumlah</center></th>
+                      <th style="width: 10%"><center>Kelas</center></th>
                       <th style="width: 25%"><center>Actions</center></th>
                     </tr>
                   </tfoot>

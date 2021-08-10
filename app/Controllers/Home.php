@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\OrderModel;
 class Home extends BaseController
 {
 	public function index()
@@ -11,7 +11,10 @@ class Home extends BaseController
 
 	public function sukses()
 	{
-		return view('sukses');
+		$orders = new OrderModel();
+        
+		$data['orders'] = $orders->findAll();
+		return view('sukses', $data);
 	}
 
 

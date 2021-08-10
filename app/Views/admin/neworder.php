@@ -20,18 +20,15 @@
                   <div class="card-body">
                       <form action="<?= site_url('/ordersadmin/store') ?>" method="post" id="text-editor">
                     <div class="form-group">
-                      <label>Nama:</label>
-                      <input type="text" class="form-control" name="nama" placeholder="Markus Jon"/>
+                      <label>Dari:</label>
+                      <input type="text" class="form-control" name="dari" placeholder="Rumah"/>
                     </div>
                     <div class="form-group">
-                      <label>Tujuan:</label>
-                      <select class="form-control select2" style="height: 100%" name="tujuan">
+                      <label>Ke:</label>
+                      <select class="form-control" style="height: 100%" name="ke">
                         <option value="Surabaya">Surabaya</option>
                         <option value="Jakarta">Jakarta</option>
-                        <option value="Bandung">Bandung</option>
                         <option value="Bali">Bali</option>
-                        <option value="Jogja">Jogja</option>
-                        <option value="Makasar">Makasar</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -43,9 +40,31 @@
                       <input type="date" class="form-control" name="pergi"/>
                     </div>
                     <div class="form-group">
+                      <label>Maskapai:</label>
+                      <select class="form-control" style="height: 100%" name="maskapai">
+                        <option value="Banteng Airlines">Banteng Airlines</option>
+                        <option value="Beringin Airlines">Beringin Airlines</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Room:</label>
+                      <select class="form-control" style="height: 100%" name="room">
+                        <option value="Depan">Depan</option>
+                        <option value="Tengah">Tengah</option>
+                        <option value="Belakang">Belakang</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label>Jumlah:</label>
                       <input type="text" class="form-control" name="jumlah"/>
-                  </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Kelas:</label>
+                      <select class="form-control" style="height: 100%" name="kelas">
+                        <option value="Ekonomi">Ekonomi</option>
+                        <option value="Bisnis">Bisnis</option>
+                      </select>
+                    </div>
                   </div>
                   <!-- <div class="card-footer">
                   Visit
