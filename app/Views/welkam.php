@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
-	<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="<?php echo base_url(); ?>/assets/css/bootstrap.min2.css" rel="stylesheet" />
 
 	<!-- Custom stlylesheet -->
 	<link href="<?php echo base_url(); ?>/assets/css/style.css" rel="stylesheet" />
